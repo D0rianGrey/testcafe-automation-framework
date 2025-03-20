@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "testcafe chrome src/tests/**/*.ts",
+    "test:headless": "testcafe chrome:headless src/tests/**/*.ts",
+    "test:firefox": "testcafe firefox src/tests/**/*.ts",
+    "test:all-browsers": "testcafe chrome,firefox src/tests/**/*.ts",
+    "test:report": "testcafe chrome src/tests/**/*.ts --reporter html:reports/report.html",
+    "test:parallel": "testcafe chrome src/tests/**/*.ts -c 3",
+    "test:single-tab": "testcafe chrome src/tests/**/*.ts --disable-page-reloads"
   },
   "keywords": [],
   "author": "",
